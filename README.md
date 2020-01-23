@@ -30,3 +30,8 @@ If rss feed generator provides link to fetch recommended songs(based on genre/ar
 Screen Shots:
 
 ![Alt text](/../master/Screen_shots/IMG_4897.PNG?raw=true)
+![Alt text](/../master/Screen_shots/IMG_4898.PNG?raw=true)
+![Alt text](/../master/Screen_shots/IMG_4899.PNG?raw=true)
+![Alt text](/../master/Screen_shots/IMG_4900.PNG?raw=true)
+![Alt text](/../master/Screen_shots/IMG_4901.PNG?raw=true)
+![Alt text](/../master/Screen_shots/IMG_4902.PNG?raw=true)
