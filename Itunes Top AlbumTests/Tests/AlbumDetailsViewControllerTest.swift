@@ -62,12 +62,12 @@ class AlbumDetailsViewControllerTest: XCTestCase {
         
         //Validate info displayed
         
-        XCTAssertTrue(copyRightLabel?.text == albumModelSample?.copyright, "Copy right details displayed wrong")
-        XCTAssertTrue(albumTitleLabel?.text == albumModelSample?.name, "Copy right details displayed wrong")
-        XCTAssertTrue(artistTitleLabel?.text == albumModelSample?.artistName, "Copy right details displayed wrong")
-        XCTAssertTrue(genreLabel?.text == albumModelSample?.genres?.first?.name, "Copy right details displayed wrong")
+        XCTAssertTrue(copyRightLabel?.text == albumModelSample?.copyright, "Copyright details displayed wrong")
+        XCTAssertTrue(albumTitleLabel?.text == albumModelSample?.name, "album title displayed wrong")
+        XCTAssertTrue(artistTitleLabel?.text == albumModelSample?.artistName, "artist name title displayed wrong")
+        XCTAssertTrue(genreLabel?.text == albumModelSample?.genres?.first?.name, "genre details  displayed wrong")
         if let releaseDate = albumModelSample?.releaseDate{
-            XCTAssertTrue(releaseDateLabel?.text == "Expected on \(releaseDate)", "Copy right details displayed wrong")
+            XCTAssertTrue(releaseDateLabel?.text == "Expected on \(releaseDate)", "release date displayed wrong")
         }
         
     }
