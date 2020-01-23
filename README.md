@@ -3,9 +3,11 @@ Itune Top Album
 Using : https://rss.itunes.apple.com/en-us
 
 No third party library
+
 Swift project
 
 Supports English / Spanish
+
 Supports Portrait and Landscape
 
 1. Album list
