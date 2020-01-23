@@ -26,3 +26,7 @@ View in apple music button at the bottom of the screen, tapping the button shoul
 Enhancement:
 If rss feed generator provides link to fetch recommended songs(based on genre/artist), list view can be added between album details and `view in apple music` button
 
+
+Screen Shots:
+
+![Alt text](/../master/Screen_shots/IMG_4897.PNG?raw=true)
