@@ -92,6 +92,7 @@ class AlbumDetailsViewController: UIViewController {
         
         let albumTitleLabel = UILabel.init(frame: CGRect.init(origin: .zero, size: .zero))
         albumTitleLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
+        albumTitleLabel.numberOfLines = 0
         albumTitleLabel.text = self.album?.name
         
         let artistTitleLabel = UILabel.init(frame: CGRect.init(origin: .zero, size: .zero))
