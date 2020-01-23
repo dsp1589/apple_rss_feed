@@ -55,6 +55,7 @@ class AlbumDetailsViewController: UIViewController {
         copyRightLabel.numberOfLines = 0
         copyRightLabel.font = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
         copyRightLabel.lineBreakMode = .byWordWrapping
+        copyRightLabel.tag = 1
         copyRightLabel.sizeToFit()
         
         let leftAlbumImageCopyRightLabelVStackView = UIStackView.init()
@@ -93,21 +94,25 @@ class AlbumDetailsViewController: UIViewController {
         let albumTitleLabel = UILabel.init(frame: CGRect.init(origin: .zero, size: .zero))
         albumTitleLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
         albumTitleLabel.numberOfLines = 0
+        albumTitleLabel.tag = 2
         albumTitleLabel.text = self.album?.name
         
         let artistTitleLabel = UILabel.init(frame: CGRect.init(origin: .zero, size: .zero))
         artistTitleLabel.font = UIFont.systemFont(ofSize: 18.0)
         artistTitleLabel.textColor = UIColor.systemPink
+        artistTitleLabel.tag = 3
         artistTitleLabel.text = self.album?.artistName
         
         let genreTitleLabel = UILabel.init(frame: CGRect.init(origin: .zero, size: .zero))
         genreTitleLabel.font = UIFont.systemFont(ofSize: 13.0)
+        genreTitleLabel.tag = 4
         genreTitleLabel.text = self.album?.genres?.first?.name
         
         
         let releaseDateTitleLabel = UILabel.init(frame: CGRect.init(origin: .zero, size: .zero))
         releaseDateTitleLabel.font = UIFont.systemFont(ofSize: 13.0)
         releaseDateTitleLabel.textColor = UIColor.systemPink
+        releaseDateTitleLabel.tag = 5
         releaseDateTitleLabel.text = self.album?.releaseDate?.formattedReleaseDateStringFromYYYYMMDD
         
         albumDetailsStackView.translatesAutoresizingMaskIntoConstraints = false

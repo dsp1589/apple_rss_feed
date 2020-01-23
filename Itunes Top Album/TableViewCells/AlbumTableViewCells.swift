@@ -26,13 +26,13 @@ class AlbumCell : UITableViewCell{
         return imageView
     }()
     
-    private let artistNameLabel : UILabel = {
+    let artistNameLabel : UILabel = {
         let artistNameLabel = UILabel(frame: CGRect(origin: .zero, size: .zero))
         artistNameLabel.font = UIFont.systemFont(ofSize: 16.0)
         return artistNameLabel
     }()
     
-    private let albumTitleLabel : UILabel = {
+    let albumTitleLabel : UILabel = {
         let albumTitleLabel = UILabel(frame: CGRect(origin: .zero, size: .zero))
         albumTitleLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
         return albumTitleLabel
