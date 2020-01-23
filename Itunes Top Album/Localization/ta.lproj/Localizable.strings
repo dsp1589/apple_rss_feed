@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Itunes Top Album
+
+  Created by Dhanasekarapandian Srinivasan on 1/22/20.
+  Copyright © 2020 Dhanasekarapandian Srinivasan. All rights reserved.
+*/
+"Top Albums" = "சிறந்த ஆல்பங்கள்";
+"View in Apple Music" = "ஆப்பில் இசை செயலியில் காண்க";
+"The Internet connection appears to be offline." = "இணைய இணைப்பு ஆஃப்லைனில் இருப்பதாகத் தெரிகிறது.";
+"Unable to load Top Albums, Pull to refresh!" = "சிறந்த ஆல்பங்களை ஏற்ற முடியவில்லை, புதுப்பிக்க இழுக்கவும்!";
+"Fetching Top Albums!" = "சிறந்த ஆல்பங்களைப் பெறுகிறது!";
+"Fetch Completed" = "பெறுதல் முடிந்தது";
+"Genres"="வகைகள்";

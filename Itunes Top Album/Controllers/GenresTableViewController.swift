@@ -1,20 +1,22 @@
 //
-//  ViewController.swift
+//  GenresTableViewController.swift
 //  Itunes Top Album
 //
 //  Created by Dhanasekarapandian Srinivasan on 1/20/20.
 //  Copyright © 2020 Dhanasekarapandian Srinivasan. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
 
+class TopAlbumsTableViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Top Albums"
     }
-
-
+    
 }
 

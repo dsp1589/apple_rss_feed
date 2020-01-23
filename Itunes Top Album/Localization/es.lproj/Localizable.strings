@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Itunes Top Album
+
+  Created by Dhanasekarapandian Srinivasan on 1/22/20.
+  Copyright © 2020 Dhanasekarapandian Srinivasan. All rights reserved.
+*/
+"Top Albums" = "Álbumes principales";
+"View in Apple Music" = "Ver en Apple Music";
+"The Internet connection appears to be offline." = "La conexión a Internet parece estar fuera de línea.";
+"Unable to load Top Albums, Pull to refresh!" = "No se pueden cargar los álbumes principales, ¡tira para actualizar!";
+"Fetching Top Albums!" = "¡Obteniendo los mejores álbumes!";
+"Fetch Completed" = "Recuperar completado";
+"Genres"="Géneros";
