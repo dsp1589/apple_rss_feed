@@ -13,6 +13,19 @@ class AlbumDetailsViewController: UIViewController {
     
     var album : Album?
     
+    private let viewInItunesButton : UIButton = {
+       let viewInItunesButton = UIButton(type: .custom)
+       viewInItunesButton.setTitle(NSLocalizedString("View in Apple Music", comment: "open album in apple music"), for: .normal)
+        viewInItunesButton.setTitleColor(UIColor.systemPink, for: .normal)
+        viewInItunesButton.layer.cornerRadius = 8.0
+        viewInItunesButton.layer.masksToBounds = true
+        viewInItunesButton.layer.borderWidth = 1
+        viewInItunesButton.layer.borderColor = UIColor.systemPink.cgColor
+        viewInItunesButton.translatesAutoresizingMaskIntoConstraints = false
+        viewInItunesButton.addTarget(self, action: #selector(openInItunes), for: .touchUpInside)
+        return viewInItunesButton
+    }()
+    
     convenience init(album : Album?) {
         self.init(nibName : nil, bundle : nil)
         self.album = album
@@ -27,18 +40,38 @@ class AlbumDetailsViewController: UIViewController {
     }
     
     override func loadView() {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let stackView = setUpLeftSideStackViews(inside: view)
-        let albumDetailsStackView = setUpRightStackViewWithAlbumDetails(in: view)
-        setupConstraints(forRight: albumDetailsStackView, withLeft: stackView, in: view)
-        self.view = view
+        super.loadView()
+        self.view.addSubview(viewInItunesButton)
+        let stackView = setUpLeftSideStackViews(inside: self.view)
+        let albumDetailsStackView = setUpRightStackViewWithAlbumDetails(in: self.view)
+        setupConstraints(forRight: albumDetailsStackView, withLeft: stackView, in: self.view)
+
+        if #available(iOS 13, *), traitCollection.userInterfaceStyle == .dark {
+            self.view.backgroundColor = UIColor.black
+        }else{
+            self.view.backgroundColor = UIColor.white
+        }
+        pinButtonToBottom()
     }
-    override func viewWillAppear(_ animated: Bool) {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.systemPink
-        navigationController?.navigationBar.isTranslucent = false
-        super.viewWillAppear(animated)
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.isTranslucent = true
     }
+
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+           if #available(iOS 13, *), newCollection.userInterfaceStyle == .dark {
+               self.view.backgroundColor = UIColor.black
+           }else{
+               self.view.backgroundColor = UIColor.white
+           }
+           super.willTransition(to: newCollection, with: coordinator)
+       }
+    
+    
     private func setUpLeftSideStackViews(inside view : UIView) -> UIStackView{
         let albumImageView = UIImageView(frame: CGRect.init(origin: .zero, size: CGSize.init(width: 150, height: 150)))
         albumImageView.image = ImageService.defaultPlaceHolderImage
@@ -65,11 +98,13 @@ class AlbumDetailsViewController: UIViewController {
         leftAlbumImageCopyRightLabelVStackView.addArrangedSubview(albumImageView)
         leftAlbumImageCopyRightLabelVStackView.addArrangedSubview(copyRightLabel)
         
+        
+        view.addSubview(leftAlbumImageCopyRightLabelVStackView)
+        
         leftAlbumImageCopyRightLabelVStackView.translatesAutoresizingMaskIntoConstraints = false
         albumImageView.translatesAutoresizingMaskIntoConstraints = false
         copyRightLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(leftAlbumImageCopyRightLabelVStackView)
         
         setUpConstraints(forLeft: leftAlbumImageCopyRightLabelVStackView, and: albumImageView, and: copyRightLabel, in: view)
         
@@ -78,7 +113,11 @@ class AlbumDetailsViewController: UIViewController {
     
     func setUpConstraints(forLeft stackView : UIStackView, and albumImageView : UIImageView, and copyRightLabel : UILabel ,in view : UIView){
         let safeArea = view.safeAreaLayoutGuide
-        view.addConstraints([NSLayoutConstraint.init(item: stackView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 20)])
+
+//        view.addConstraints([NSLayoutConstraint.init(item: stackView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 20)])
+        
+        stackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20.0).isActive = true
+
         stackView.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 20.0).isActive = true
         stackView.addConstraint(NSLayoutConstraint.init(item: stackView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 150.0))
         albumImageView.addConstraint(NSLayoutConstraint.init(item: albumImageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 150.0))
@@ -93,7 +132,7 @@ class AlbumDetailsViewController: UIViewController {
         
         let albumTitleLabel = UILabel.init(frame: CGRect.init(origin: .zero, size: .zero))
         albumTitleLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
-        albumTitleLabel.numberOfLines = 0
+        albumTitleLabel.numberOfLines = 3
         albumTitleLabel.tag = 2
         albumTitleLabel.text = self.album?.name
         
@@ -113,6 +152,7 @@ class AlbumDetailsViewController: UIViewController {
         releaseDateTitleLabel.font = UIFont.systemFont(ofSize: 13.0)
         releaseDateTitleLabel.textColor = UIColor.systemPink
         releaseDateTitleLabel.tag = 5
+        releaseDateTitleLabel.adjustsFontSizeToFitWidth = true
         releaseDateTitleLabel.text = self.album?.releaseDate?.formattedReleaseDateStringFromYYYYMMDD
         
         albumDetailsStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -131,8 +171,25 @@ class AlbumDetailsViewController: UIViewController {
     
     func setupConstraints(forRight albumDetailsStackView : UIStackView, withLeft stackView : UIStackView, in view : UIView) {
         view.addConstraints([NSLayoutConstraint.init(item: albumDetailsStackView, attribute: .left, relatedBy: .equal, toItem: stackView, attribute: .right, multiplier: 1.0, constant: 8.0),NSLayoutConstraint.init(item: albumDetailsStackView, attribute: .top, relatedBy: .equal, toItem: stackView, attribute: .top, multiplier: 1.0, constant: 0.0)])
-        //,NSLayoutConstraint.init(item: albumDetailsStackView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1.0, constant: 8.0),
         let safeArea = view.safeAreaLayoutGuide
         safeArea.rightAnchor.constraint(equalTo: albumDetailsStackView.rightAnchor, constant: 20.0).isActive = true
+    }
+    
+    private func pinButtonToBottom(){
+            viewInItunesButton.addConstraint(NSLayoutConstraint(item: viewInItunesButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 44.0))
+            
+            let safeArea = view.safeAreaLayoutGuide
+            safeArea.rightAnchor.constraint(equalTo: viewInItunesButton.rightAnchor, constant: 20.0).isActive = true
+            viewInItunesButton.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 20.0).isActive = true
+            safeArea.bottomAnchor.constraint(equalTo: viewInItunesButton.bottomAnchor, constant: 20.0).isActive = true
+    }
+    
+    @objc private func openInItunes(){
+        guard let urlString = album?.url, let urlToOpen = URL.init(string: urlString) else { return }
+        if UIApplication.shared.canOpenURL(urlToOpen) {
+            UIApplication.shared.open(urlToOpen, options: [:]) { (complted) in
+                debugPrint(complted)
+            }
+        }
     }
 }

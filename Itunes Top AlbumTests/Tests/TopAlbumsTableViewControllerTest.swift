@@ -32,7 +32,7 @@ class TopAlbumsTableViewControllerTest: XCTestCase {
     func testTableViewConfigure(){
         
         let tableView = topAlbumsViewController.tableView
-        XCTAssertTrue(tableView?.separatorInset == UIEdgeInsets(top: 0, left: 140, bottom: 0, right: 0), "Edge inset for table view cell separator found changed")
+        XCTAssertTrue(tableView?.separatorInset == UIEdgeInsets(top: 0, left: 120, bottom: 0, right: 0), "Edge inset for table view cell separator found changed")
         
         let cellRegistered = tableView?.dequeueReusableCell(withIdentifier: "TopAlbumsTableViewCell") as? AlbumCell
         XCTAssertNotNil(cellRegistered)

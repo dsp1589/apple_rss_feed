@@ -109,8 +109,10 @@ extension TopAlbumsTableViewController{
         guard let album = self.appleRssFeedResponse?.feed.results?[indexPath.row] else{
             return
         }
-        let albumDetailsHostingViewController = AlbumDetailsHostingViewController.init(album: album)
-        navigationController?.pushViewController(albumDetailsHostingViewController, animated: true)
+//        let albumDetailsHostingViewController = AlbumDetailsHostingViewController.init(album: album)
+//        navigationController?.pushViewController(albumDetailsHostingViewController, animated: true)
+        let albumDetailsController = AlbumDetailsViewController(album: album)
+        navigationController?.pushViewController(albumDetailsController, animated: true)
     }
 }
 
@@ -140,11 +142,12 @@ extension TopAlbumsTableViewController {
         return stactView
     }
     private func configureTableView(){
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 140, bottom: 0, right: 0)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 120, bottom: 0, right: 0)
         tableView.register(AlbumCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     private func configureNavController(){
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemPink]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemPink]
     }
