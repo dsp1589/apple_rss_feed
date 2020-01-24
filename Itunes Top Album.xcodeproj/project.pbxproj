@@ -16,7 +16,6 @@
 		BA1417F623D65CBE00CBD72E /* AppleRSSFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1417F523D65CBE00CBD72E /* AppleRSSFeedService.swift */; };
 		BA1417F923D67B4800CBD72E /* AppleRssFeedResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1417F823D67B4800CBD72E /* AppleRssFeedResponseModel.swift */; };
 		BA1417FE23D69D0200CBD72E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1417FD23D69D0200CBD72E /* ImageService.swift */; };
-		BAA75EA923D78EB500E548F7 /* AlbumDetailsHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75EA823D78EB500E548F7 /* AlbumDetailsHostingViewController.swift */; };
 		BAA75EAB23D8B31500E548F7 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75EAA23D8B31500E548F7 /* ServiceRequest.swift */; };
 		BAA75EAE23D8BE9000E548F7 /* AlbumTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75EAD23D8BE9000E548F7 /* AlbumTableViewCells.swift */; };
 		BAA75EB723D8C61500E548F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAA75EB923D8C61500E548F7 /* Localizable.strings */; };
@@ -58,7 +57,6 @@
 		BA1417F523D65CBE00CBD72E /* AppleRSSFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRSSFeedService.swift; sourceTree = "<group>"; };
 		BA1417F823D67B4800CBD72E /* AppleRssFeedResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRssFeedResponseModel.swift; sourceTree = "<group>"; };
 		BA1417FD23D69D0200CBD72E /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		BAA75EA823D78EB500E548F7 /* AlbumDetailsHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsHostingViewController.swift; sourceTree = "<group>"; };
 		BAA75EAA23D8B31500E548F7 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		BAA75EAD23D8BE9000E548F7 /* AlbumTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCells.swift; sourceTree = "<group>"; };
 		BAA75EB823D8C61500E548F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				BA1417EF23D65B5100CBD72E /* TopAlbumsTableViewController.swift */,
-				BAA75EA823D78EB500E548F7 /* AlbumDetailsHostingViewController.swift */,
 				BAA75ECC23D9A07500E548F7 /* AlbumDetailsViewController.swift */,
 			);
 			path = Controllers;
@@ -329,7 +326,6 @@
 			files = (
 				BA1417F623D65CBE00CBD72E /* AppleRSSFeedService.swift in Sources */,
 				BAA75EAE23D8BE9000E548F7 /* AlbumTableViewCells.swift in Sources */,
-				BAA75EA923D78EB500E548F7 /* AlbumDetailsHostingViewController.swift in Sources */,
 				BAA75EC123D909D700E548F7 /* DateFormatter.swift in Sources */,
 				BA1417FE23D69D0200CBD72E /* ImageService.swift in Sources */,
 				BAA75ECD23D9A07500E548F7 /* AlbumDetailsViewController.swift in Sources */,
