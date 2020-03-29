@@ -17,23 +17,28 @@ class AlbumDetailsViewControllerTest: XCTestCase {
     let albumDetailsViewController = AlbumDetailsViewController.init(album: nil)
     var albumModelSample : Album?
     override func setUp() {
-        let testBundle = Bundle(for: type(of: self))
-
-        guard let url = testBundle.url(forResource: fileName, withExtension: fileType) else {
-            XCTFail("\(fileName).\(fileType) is not found")
+//        let testBundle = Bundle(for: type(of: self))
+//
+//        guard let url = testBundle.url(forResource: fileName, withExtension: fileType) else {
+//            XCTFail("\(fileName).\(fileType) is not found")
+//            return
+//        }
+//
+//        guard let json = try? Data(contentsOf: url) else{
+//            XCTFail("\(fileName).\(fileType) file corrupted")
+//            return
+//        }
+//        let jsonDecode = JSONDecoder.init()
+//                 
+//        guard let modelResponse = try? jsonDecode.decode(Album.self, from: json) else {
+//            XCTFail("Json parsing to model failed")
+//            return
+//        }
+        
+        guard let modelResponse = localJsonDataForTesting(from: fileName, of: fileType, model: Album.self) else {
             return
         }
-
-        guard let json = try? Data(contentsOf: url) else{
-            XCTFail("\(fileName).\(fileType) file corrupted")
-            return
-        }
-        let jsonDecode = JSONDecoder.init()
-                 
-        guard let modelResponse = try? jsonDecode.decode(Album.self, from: json) else {
-            XCTFail("Json parsing to model failed")
-            return
-        }
+        
         albumDetailsViewController.album = modelResponse
         albumModelSample = modelResponse
         albumDetailsViewController.loadViewIfNeeded()

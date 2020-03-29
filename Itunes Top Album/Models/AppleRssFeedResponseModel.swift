@@ -43,7 +43,7 @@ struct Link: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Result: Codable{
     let artistName, id, name : String?
     let collectionName: String?
     let kind: String?

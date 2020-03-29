@@ -16,6 +16,7 @@
 		BA1417F623D65CBE00CBD72E /* AppleRSSFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1417F523D65CBE00CBD72E /* AppleRSSFeedService.swift */; };
 		BA1417F923D67B4800CBD72E /* AppleRssFeedResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1417F823D67B4800CBD72E /* AppleRssFeedResponseModel.swift */; };
 		BA1417FE23D69D0200CBD72E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1417FD23D69D0200CBD72E /* ImageService.swift */; };
+		BA46802E242D45AA00141488 /* rss_feed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA46802C242D45AA00141488 /* rss_feed.xcdatamodeld */; };
 		BAA75EAB23D8B31500E548F7 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75EAA23D8B31500E548F7 /* ServiceRequest.swift */; };
 		BAA75EAE23D8BE9000E548F7 /* AlbumTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75EAD23D8BE9000E548F7 /* AlbumTableViewCells.swift */; };
 		BAA75EB723D8C61500E548F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAA75EB923D8C61500E548F7 /* Localizable.strings */; };
@@ -28,9 +29,12 @@
 		BAA75ECF23D9F37E00E548F7 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75ECE23D9F37E00E548F7 /* RoundedImageView.swift */; };
 		BAA75ED323DA06CD00E548F7 /* ImageServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75ED223DA06CD00E548F7 /* ImageServiceTest.swift */; };
 		BAA75ED523DA1A1700E548F7 /* 200x200.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAA75ED423DA1A1700E548F7 /* 200x200.jpg */; };
+		BAD65F5724302FBD00115636 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD65F5624302FBD00115636 /* MockURLSession.swift */; };
+		BAD65F592430354400115636 /* AppleRssFeedServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD65F582430354400115636 /* AppleRssFeedServiceTest.swift */; };
 		BAD6CA1D23DA364200585ED4 /* TopAlbumsTableViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD6CA1C23DA364200585ED4 /* TopAlbumsTableViewControllerTest.swift */; };
 		BAD6CA1F23DA3C1000585ED4 /* AlbumData.json in Resources */ = {isa = PBXBuildFile; fileRef = BAD6CA1E23DA3C1000585ED4 /* AlbumData.json */; };
 		BAD6CA2523DA456B00585ED4 /* AlbumDetailsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD6CA2423DA456B00585ED4 /* AlbumDetailsViewControllerTest.swift */; };
+		BAE037B623DF40B000F8582B /* AppleSeedTestDataParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE037B523DF40B000F8582B /* AppleSeedTestDataParsable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,7 @@
 		BA1417F523D65CBE00CBD72E /* AppleRSSFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRSSFeedService.swift; sourceTree = "<group>"; };
 		BA1417F823D67B4800CBD72E /* AppleRssFeedResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRssFeedResponseModel.swift; sourceTree = "<group>"; };
 		BA1417FD23D69D0200CBD72E /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		BA46802D242D45AA00141488 /* rss_feed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rss_feed.xcdatamodel; sourceTree = "<group>"; };
 		BAA75EAA23D8B31500E548F7 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		BAA75EAD23D8BE9000E548F7 /* AlbumTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCells.swift; sourceTree = "<group>"; };
 		BAA75EB823D8C61500E548F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -73,9 +78,12 @@
 		BAA75ECE23D9F37E00E548F7 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		BAA75ED223DA06CD00E548F7 /* ImageServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTest.swift; sourceTree = "<group>"; };
 		BAA75ED423DA1A1700E548F7 /* 200x200.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 200x200.jpg; sourceTree = "<group>"; };
+		BAD65F5624302FBD00115636 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		BAD65F582430354400115636 /* AppleRssFeedServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRssFeedServiceTest.swift; sourceTree = "<group>"; };
 		BAD6CA1C23DA364200585ED4 /* TopAlbumsTableViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsTableViewControllerTest.swift; sourceTree = "<group>"; };
 		BAD6CA1E23DA3C1000585ED4 /* AlbumData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AlbumData.json; sourceTree = "<group>"; };
 		BAD6CA2423DA456B00585ED4 /* AlbumDetailsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewControllerTest.swift; sourceTree = "<group>"; };
+		BAE037B523DF40B000F8582B /* AppleSeedTestDataParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSeedTestDataParsable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		BA1417BE23D63DAF00CBD72E = {
 			isa = PBXGroup;
 			children = (
+				BA46802C242D45AA00141488 /* rss_feed.xcdatamodeld */,
 				BA1417C923D63DAF00CBD72E /* Itunes Top Album */,
 				BA1417E023D63DB200CBD72E /* Itunes Top AlbumTests */,
 				BA1417C823D63DAF00CBD72E /* Products */,
@@ -204,6 +213,9 @@
 				BAA75ED223DA06CD00E548F7 /* ImageServiceTest.swift */,
 				BAD6CA1C23DA364200585ED4 /* TopAlbumsTableViewControllerTest.swift */,
 				BAD6CA2423DA456B00585ED4 /* AlbumDetailsViewControllerTest.swift */,
+				BAE037B523DF40B000F8582B /* AppleSeedTestDataParsable.swift */,
+				BAD65F5624302FBD00115636 /* MockURLSession.swift */,
+				BAD65F582430354400115636 /* AppleRssFeedServiceTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -336,6 +348,7 @@
 				BA1417F023D65B5100CBD72E /* TopAlbumsTableViewController.swift in Sources */,
 				BA1417F323D65C0600CBD72E /* Endpoints.swift in Sources */,
 				BA1417F923D67B4800CBD72E /* AppleRssFeedResponseModel.swift in Sources */,
+				BA46802E242D45AA00141488 /* rss_feed.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,11 +356,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD65F5724302FBD00115636 /* MockURLSession.swift in Sources */,
 				BAA75EC323D90BF800E548F7 /* StringExtensionsTest.swift in Sources */,
 				BAD6CA2523DA456B00585ED4 /* AlbumDetailsViewControllerTest.swift in Sources */,
 				BAA75ED323DA06CD00E548F7 /* ImageServiceTest.swift in Sources */,
 				BAA75EBF23D9081200E548F7 /* EndPointsCheckTest.swift in Sources */,
+				BAE037B623DF40B000F8582B /* AppleSeedTestDataParsable.swift in Sources */,
 				BAA75EC923D9201A00E548F7 /* AppleRssFeedModelTest.swift in Sources */,
+				BAD65F592430354400115636 /* AppleRssFeedServiceTest.swift in Sources */,
 				BAD6CA1D23DA364200585ED4 /* TopAlbumsTableViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +631,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA46802C242D45AA00141488 /* rss_feed.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA46802D242D45AA00141488 /* rss_feed.xcdatamodel */,
+			);
+			currentVersion = BA46802D242D45AA00141488 /* rss_feed.xcdatamodel */;
+			path = rss_feed.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BA1417BF23D63DAF00CBD72E /* Project object */;
 }

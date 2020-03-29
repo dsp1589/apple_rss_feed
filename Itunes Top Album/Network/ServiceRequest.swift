@@ -13,15 +13,18 @@ import Foundation
 class ServiceRequest {
     
     let request : URLRequest
-    
-    init(request : URLRequest) {
+    let urlSession: URLSession
+    init(request : URLRequest, urlSession: URLSession = URLSession.shared) {
         self.request = request
+        self.urlSession = urlSession
     }
     
     func execute(completionHandler :  @escaping (Data?, URLResponse?, Error?) -> Void) -> Void {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
-            URLSession.shared.dataTask(with: self.request, completionHandler: completionHandler).resume()
+            self.urlSession.dataTask(with: self.request, completionHandler: completionHandler).resume()
         }
     }
-    
+    deinit {
+        print("destroyed")
+    }
 }

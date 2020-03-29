@@ -20,16 +20,17 @@ enum ServiceError : Error{
 protocol Service{
     var serviceEndpoint : Endpoint {get}
 
-    init(service : Endpoint)
+    init(service : Endpoint, urlSession: URLSession)
 }
 
 
 class NetWorkService : Service {
 
     var serviceEndpoint: Endpoint
-    
-    required init(service : Endpoint) {
+    var urlSession: URLSession
+    required init(service : Endpoint, urlSession: URLSession = URLSession.shared) {
         self.serviceEndpoint = service
+        self.urlSession = urlSession
     }
 }
     
@@ -39,7 +40,9 @@ class AppleRssFeedService : NetWorkService {
             completionHandler(nil,ServiceError.invalidUrl)
             return
         }
-        ServiceRequest.init(request: URLRequest(url: url)).execute { (data, urlResponse, error) in
+//        Swift.Result
+        //Test with dependency Injection
+        ServiceRequest.init(request: URLRequest(url: url), urlSession: self.urlSession).execute { (data, urlResponse, error) in
             guard error == nil, let data = data else {
                 if let errCode = (error as NSError?)?.code, errCode == -1009 {
                     completionHandler(nil, ServiceError.noInternet)

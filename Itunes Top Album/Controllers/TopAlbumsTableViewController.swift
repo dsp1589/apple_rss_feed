@@ -52,6 +52,13 @@ class TopAlbumsTableViewController: UITableViewController {
 
     @objc private func fetchTopAlbums(){
         AppleRssFeedService(service: .topAlbums).fetchTopAlbums { (appleRssFeedResponse, error) in
+            
+//            switch(result){
+//            case .success(appleRssFeedResponse):
+//                
+//            case .fa
+//            }
+            
             DispatchQueue.main.async {
                 if let refreshing = self.refreshControl?.isRefreshing, refreshing {
                     self.refreshControl?.endRefreshing()
