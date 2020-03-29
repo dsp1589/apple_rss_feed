@@ -72,7 +72,9 @@ class AlbumCell : UITableViewCell{
     private func setConstraints(){
         //Priority for heights
         contentView.addConstraint(NSLayoutConstraint.init(item: albumImageView, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 20.0))
-        albumImageView.addConstraints([NSLayoutConstraint.init(item: albumImageView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100.0),NSLayoutConstraint.init(item: albumImageView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100.0)])
+        let height_100 = NSLayoutConstraint.init(item: albumImageView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100.0)
+        height_100.priority = .defaultHigh
+        albumImageView.addConstraints([height_100, NSLayoutConstraint.init(item: albumImageView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100.0)])
         contentView.addConstraint(NSLayoutConstraint.init(item: albumImageView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 20.0))
         contentView.addConstraint(NSLayoutConstraint.init(item: contentView, attribute: .bottom, relatedBy: .equal, toItem: albumImageView, attribute: .bottom, multiplier: 1.0, constant: 20.0))
         contentView.addConstraint(NSLayoutConstraint.init(item: albumTitleLabel, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: albumImageView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 20.0))

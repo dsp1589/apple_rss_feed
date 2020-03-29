@@ -24,7 +24,4 @@ class ServiceRequest {
             self.urlSession.dataTask(with: self.request, completionHandler: completionHandler).resume()
         }
     }
-    deinit {
-        print("destroyed")
-    }
 }
